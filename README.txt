@@ -26,7 +26,7 @@ Features:
 == Installation ==
 1. Upload the plugin folder to wp-content/plugins/
 2. Activate the plugin from the WordPress admin
-3. Configure your Odoo credentials in the plugin file
+3. Configure your Odoo credentials in the plugin settings
 4. Go to Odoo Woo menu to import modules/products
 
 == Changelog ==
