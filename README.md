@@ -20,9 +20,4 @@ Seamlessly sync your **WooCommerce** store with **Odoo ERP**. Import modules and
 
 1. Upload the plugin folder to `wp-content/plugins/`.  
 2. Activate the plugin from the WordPress admin dashboard.  
-3. Open `odoo-sync.php` and configure your **Odoo credentials**:  
-   ```php
-   define('ODOO_URL', 'https://your-odoo.com/jsonrpc');
-   define('ODOO_DB', 'your_db');
-   define('ODOO_USER', 'user@example.com');
-   define('ODOO_KEY', 'your_api_key_here');
+3. Configure your data from settings tab.
