@@ -1,8 +1,10 @@
 # odoo-woo
+<img width="758" height="757" alt="logo" src="https://github.com/user-attachments/assets/222c919c-4cb4-49aa-ba10-d2ee299b9c14" />
 
 Seamlessly sync your **WooCommerce** store with **Odoo ERP**. Import modules and products from Odoo into WooCommerce, with bulk or single product import and automatic updates.
 
 ---
+
 
 ## Features
 
