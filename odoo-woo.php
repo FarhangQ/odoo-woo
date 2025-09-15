@@ -44,16 +44,23 @@ function odoo_rpc($model, $method, $args = [], $kwargs = [])
         ],
         "id" => uniqid()
     ];
-    $ch = curl_init(ODOO_URL);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, ["Content-Type: application/json"]);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
-    $resp = curl_exec($ch);
-    curl_close($ch);
-    $decoded = json_decode($resp, true);
+
+    $response = wp_remote_post(ODOO_URL, [
+        'headers' => ['Content-Type' => 'application/json'],
+        'body'    => wp_json_encode($payload),
+        'timeout' => 30,
+    ]);
+
+    if (is_wp_error($response)) {
+        return false;
+    }
+
+    $body = wp_remote_retrieve_body($response);
+    $decoded = json_decode($body, true);
+
     return $decoded['result'] ?? false;
 }
+
 
 /**
  * Authenticate to Odoo once
